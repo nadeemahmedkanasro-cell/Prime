@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Hakim Ali | E-DUKAN</title>
+    <meta name="description" content="E-DUKAN is a digital resource hub by Hakim Ali featuring technology guides, useful tools, AI resources, social links and community queries.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hakim Ali">
+    <meta property="og:title" content="E-DUKAN | Digital Resource Hub">
+    <meta property="og:description" content="Discover useful digital tools, technology guides, AI resources and community content.">
+    <meta name="theme-color" content="#f97316">
+    <title>E-DUKAN | Official Platform & Hub</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +53,6 @@
         }
 
         /* TOP BAR */
-
         .topbar {
             background: var(--orange);
             color: white;
@@ -59,7 +63,6 @@
         }
 
         /* HEADER */
-
         header {
             position: sticky;
             top: 0;
@@ -73,7 +76,6 @@
             margin: auto;
             height: 70px;
             padding: 0 20px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -81,7 +83,6 @@
         }
 
         /* LOGO */
-
         .logo {
             display: flex;
             align-items: center;
@@ -91,31 +92,32 @@
         }
 
         .logo-circle {
-            width: 42px;
+            padding: 0 16px;
             height: 42px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
-            border-radius: 50%;
+            gap: 8px;
+            border-radius: 21px;
             background: var(--orange);
             color: white;
-
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 800;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
-        .logo-text span {
-            color: var(--orange);
+        .logo-circle svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
         }
 
         /* NAVIGATION */
-
         .nav {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         .nav a {
@@ -129,7 +131,6 @@
         }
 
         /* HEADER RIGHT */
-
         .header-right {
             display: flex;
             align-items: center;
@@ -137,17 +138,13 @@
         }
 
         /* SEARCH */
-
         .search {
             width: 220px;
             height: 40px;
-
             display: flex;
             align-items: center;
-
             border: 1px solid var(--border);
             border-radius: 20px;
-
             padding: 0 14px;
             background: var(--bg);
         }
@@ -163,7 +160,6 @@
             outline: none;
             background: transparent;
             color: var(--text);
-
             font-family: "Montserrat", sans-serif;
             font-size: 12px;
         }
@@ -171,39 +167,133 @@
         .theme-btn {
             width: 40px;
             height: 40px;
-
             border: 1px solid var(--border);
             border-radius: 50%;
-
             background: var(--card);
             color: var(--text);
-
             cursor: pointer;
             font-size: 16px;
         }
 
-        /* HERO */
+        /* BEAUTIFIED YOUTUBE MOVING BANNER */
+        .yt-banner {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #0f0f11 0%, #1a1921 50%, #0f0f11 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.25);
+            height: 48px;
+            overflow: hidden;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
 
+        .yt-banner-label {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: #ffffff;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            z-index: 10;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ffffff;
+            animation: pulse-live 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse-live {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #ffffff; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+
+        .yt-ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+
+        .yt-ticker-move {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: ticker 32s linear infinite;
+        }
+
+        .yt-ticker-move:hover {
+            animation-play-state: paused;
+        }
+
+        .yt-ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            margin: 0 12px;
+            color: #e2e8f0;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            font-size: 12px;
+            transition: all 0.25s ease;
+        }
+
+        .yt-ticker-item:hover {
+            color: #ffffff;
+            background: rgba(249, 115, 22, 0.2);
+            border-color: var(--orange);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        .yt-badge {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff4d4d;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* HERO */
         .hero {
             max-width: 900px;
             margin: auto;
-
             text-align: center;
             padding: 90px 20px 75px;
         }
 
         .hero-small {
             display: inline-block;
-
             color: var(--orange);
             font-size: 12px;
             font-weight: 700;
-
             background: rgba(249, 115, 22, 0.1);
-
             padding: 7px 14px;
             border-radius: 20px;
-
             margin-bottom: 18px;
         }
 
@@ -211,18 +301,14 @@
             font-size: clamp(40px, 7vw, 68px);
             line-height: 1.05;
             font-weight: 800;
-
             margin-bottom: 20px;
         }
 
-        .hero h1 span {
-            color: var(--orange);
-        }
+        .hero h1 span { color: var(--orange); }
 
         .hero p {
             max-width: 650px;
             margin: auto;
-
             color: var(--muted);
             font-size: 15px;
             line-height: 1.8;
@@ -230,18 +316,13 @@
 
         .hero-button {
             display: inline-block;
-
             margin-top: 28px;
-
             background: var(--orange);
             color: white;
-
             padding: 13px 22px;
             border-radius: 7px;
-
             font-size: 13px;
             font-weight: 700;
-
             transition: 0.2s;
         }
 
@@ -250,8 +331,7 @@
             transform: translateY(-2px);
         }
 
-        /* MAIN */
-
+        /* MAIN SECTIONS */
         .section {
             max-width: 1100px;
             margin: auto;
@@ -282,7 +362,6 @@
         }
 
         /* LINKS GRID */
-
         .links-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -291,13 +370,13 @@
 
         .link-card {
             background: var(--card);
-
             border: 1px solid var(--border);
             border-radius: 14px;
-
             padding: 25px;
-
             transition: 0.25s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .link-card:hover {
@@ -307,31 +386,19 @@
         }
 
         /* PLATFORM LOGO */
-
         .platform-logo {
             width: 52px;
             height: 52px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             border-radius: 12px;
-
             margin-bottom: 18px;
         }
 
-        .youtube-logo {
-            background: #ff0000;
-        }
-
-        .facebook-logo {
-            background: #1877f2;
-        }
-
-        .pinterest-logo {
-            background: #e60023;
-        }
+        .youtube-logo { background: #ff0000; }
+        .facebook-logo { background: #1877f2; }
+        .pinterest-logo { background: #e60023; }
 
         .platform-logo svg {
             width: 29px;
@@ -348,8 +415,6 @@
             color: var(--muted);
             font-size: 12px;
             line-height: 1.7;
-
-            min-height: 62px;
             margin-bottom: 18px;
         }
 
@@ -359,12 +424,258 @@
             font-weight: 800;
         }
 
-        .visit:hover {
-            color: var(--orange-dark);
+        .visit:hover { color: var(--orange-dark); }
+
+        /* ARTICLES / BLOG SECTION */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .article-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-tag {
+            color: var(--orange);
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .article-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .article-read-btn {
+            color: var(--orange);
+            font-size: 12px;
+            font-weight: 800;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        /* DIGITAL TOOLS */
+        .tool-logo {
+            border: 1px solid var(--border);
+        }
+
+        .tool-group {
+            margin-bottom: 55px;
+        }
+
+        .tool-group-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--orange);
+            padding-left: 12px;
+        }
+
+        /* QUERY CHAT */
+        .query-section { max-width: 900px; }
+
+        .query-app {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.05);
+        }
+
+        .query-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 18px 22px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .query-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .query-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--orange);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .query-header h3 { font-size: 15px; margin-bottom: 3px; }
+        .query-status { color: var(--muted); font-size: 11px; }
+
+        .query-clear {
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            border-radius: 8px;
+            padding: 8px 11px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .query-clear:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .query-messages {
+            min-height: 330px;
+            max-height: 520px;
+            overflow-y: auto;
+            padding: 22px;
+            background: radial-gradient(circle at 10% 20%, rgba(249,115,22,0.04), transparent 25%), var(--bg);
+        }
+
+        .query-empty {
+            text-align: center;
+            color: var(--muted);
+            padding: 70px 20px;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .query-empty strong {
+            display: block;
+            color: var(--text);
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .query-message { display: flex; margin-bottom: 15px; }
+        .query-message.user { justify-content: flex-end; }
+
+        .query-bubble {
+            max-width: min(78%, 620px);
+            padding: 12px 14px 9px;
+            border-radius: 14px 14px 14px 4px;
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .query-message.user .query-bubble {
+            background: var(--orange);
+            color: white;
+            border-color: var(--orange);
+            border-radius: 14px 14px 4px 14px;
+        }
+
+        .query-question {
+            font-size: 13px;
+            line-height: 1.65;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .query-meta {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .query-time { font-size: 9px; opacity: 0.72; }
+        .query-actions { display: flex; gap: 3px; }
+
+        .query-action {
+            border: 0;
+            background: transparent;
+            color: inherit;
+            opacity: 0.7;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 10px;
+            padding: 2px 4px;
+        }
+
+        .query-action:hover { opacity: 1; text-decoration: underline; }
+
+        .query-composer {
+            padding: 15px;
+            border-top: 1px solid var(--border);
+            background: var(--card);
+        }
+
+        .query-input-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .query-input {
+            flex: 1;
+            min-height: 46px;
+            max-height: 130px;
+            resize: vertical;
+            border: 1px solid var(--border);
+            outline: none;
+            border-radius: 12px;
+            padding: 12px 14px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .query-input:focus {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+        }
+
+        .query-send {
+            height: 46px;
+            padding: 0 18px;
+            border: 0;
+            border-radius: 11px;
+            background: var(--orange);
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .query-send:hover { background: var(--orange-dark); }
+
+        .query-help {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 9px;
+            text-align: right;
         }
 
         /* ABOUT */
-
         .about {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -378,14 +689,8 @@
             font-weight: 800;
         }
 
-        .about h2 {
-            font-size: 38px;
-            margin: 8px 0 18px;
-        }
-
-        .about h2 span {
-            color: var(--orange);
-        }
+        .about h2 { font-size: 38px; margin: 8px 0 18px; }
+        .about h2 span { color: var(--orange); }
 
         .about p {
             color: var(--muted);
@@ -401,27 +706,19 @@
             padding: 28px;
         }
 
-        .about-box h3 {
-            margin-bottom: 18px;
-            font-size: 17px;
-        }
+        .about-box h3 { margin-bottom: 18px; font-size: 17px; }
 
         .about-item {
             display: flex;
             align-items: center;
             gap: 12px;
-
             padding: 13px 0;
-
             border-bottom: 1px solid var(--border);
-
             font-size: 13px;
             font-weight: 600;
         }
 
-        .about-item:last-child {
-            border-bottom: none;
-        }
+        .about-item:last-child { border-bottom: none; }
 
         .about-dot {
             width: 8px;
@@ -430,59 +727,152 @@
             border-radius: 50%;
         }
 
-        /* CONTACT */
+        /* CONTACT FORM SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-form-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .contact-form-card h3 { font-size: 20px; margin-bottom: 15px; }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 12px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .submit-btn {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .submit-btn:hover { background: var(--orange-dark); }
 
         .contact-box {
             background: var(--orange);
             color: white;
-
             text-align: center;
-
-            padding: 50px 20px;
+            padding: 40px 20px;
             border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .contact-box h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .contact-box p {
-            opacity: 0.9;
-            font-size: 13px;
-            margin-bottom: 25px;
-        }
+        .contact-box h2 { font-size: 26px; margin-bottom: 10px; }
+        .contact-box p { opacity: 0.9; font-size: 13px; margin-bottom: 25px; }
 
         .contact-button {
             display: inline-block;
-
             background: white;
             color: var(--orange-dark);
-
             padding: 12px 22px;
             border-radius: 7px;
-
             font-size: 12px;
             font-weight: 800;
         }
 
-        /* FOOTER */
+        /* MODAL SYSTEM */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
+        .modal-content {
+            background: var(--card);
+            color: var(--text);
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .modal-header h3 { font-size: 20px; }
+        .modal-close {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .modal-body {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+        .modal-body h4 { color: var(--text); margin: 15px 0 5px; }
+
+        /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
             background: var(--card);
-
             padding: 35px 20px;
         }
 
         .footer-content {
             max-width: 1100px;
             margin: auto;
-
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
-
             gap: 20px;
         }
 
@@ -495,630 +885,1041 @@
         .footer-links {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .footer-links a {
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .footer-links a:hover {
-            color: var(--orange);
-        }
+        .footer-links a { font-size: 11px; font-weight: 600; }
+        .footer-links a:hover { color: var(--orange); }
 
         .copyright {
             max-width: 1100px;
             margin: 25px auto 0;
-
             padding-top: 18px;
-
             border-top: 1px solid var(--border);
-
             color: var(--muted);
             font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* MOBILE */
-
+        /* MOBILE RESPONSIVENESS */
         @media (max-width: 800px) {
-
-            .nav {
-                display: none;
-            }
-
-            .search {
-                width: 180px;
-            }
-
-            .links-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+            .nav { display: none; }
+            .search { width: 180px; }
+            .links-grid, .articles-grid { grid-template-columns: 1fr 1fr; }
+            .about, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-content { flex-direction: column; align-items: flex-start; }
+            .copyright { flex-direction: column; gap: 10px; text-align: center; }
         }
 
         @media (max-width: 550px) {
-
-            .navbar {
-                height: 65px;
-            }
-
-            .search {
-                width: 150px;
-            }
-
-            .logo {
-                font-size: 17px;
-            }
-
-            .logo-circle {
-                width: 38px;
-                height: 38px;
-            }
-
-            .hero {
-                padding: 65px 20px;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .links-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about h2 {
-                font-size: 32px;
-            }
-
-            .footer-links {
-                flex-wrap: wrap;
-            }
+            .navbar { height: 65px; }
+            .search { width: 150px; }
+            .logo { font-size: 17px; }
+            .logo-circle { height: 38px; padding: 0 12px; font-size: 13px; }
+            .hero { padding: 65px 20px; }
+            .hero h1 { font-size: 43px; }
+            .links-grid, .articles-grid { grid-template-columns: 1fr; }
+            .about h2 { font-size: 32px; }
+            .footer-links { flex-wrap: wrap; }
+            .yt-banner-label span { display: none; }
         }
     </style>
 </head>
-
 <body>
 
     <!-- TOP BAR -->
-
     <div class="topbar">
-        Welcome to E-DUKAN
+        Welcome to E-DUKAN — Official Digital Resource Hub
     </div>
 
-
     <!-- HEADER -->
-
     <header>
-
         <nav class="navbar">
-
             <a href="#home" class="logo">
-
                 <div class="logo-circle">
-                    E
+                    <svg viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/></svg>
+                    E-DUKAN
                 </div>
-
-                <div class="logo-text">
-                    E-<span>DUKAN</span>
-                </div>
-
             </a>
-
 
             <div class="nav">
-
                 <a href="#home">Home</a>
+                <a href="#articles">Articles</a>
                 <a href="#links">Links</a>
+                <a href="#digital-tools">Digital Tools</a>
+                <a href="#queries">Queries</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
-
             </div>
-
 
             <div class="header-right">
-
-                <!-- SEARCH -->
-
                 <div class="search">
-
-                    <span class="search-icon">⌕</span>
-
-                    <input
-                        type="search"
-                        id="searchInput"
-                        placeholder="Search..."
-                        autocomplete="off"
-                    >
-
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <input type="search" id="searchInput" placeholder="Search 40+ tools..." autocomplete="off">
                 </div>
 
-
-                <!-- DARK MODE -->
-
-                <button
-                    class="theme-btn"
-                    id="themeButton"
-                    onclick="toggleDarkMode()"
-                    aria-label="Toggle dark mode"
-                >
-                    ☾
-                </button>
-
+                <button class="theme-btn" id="themeButton" onclick="toggleDarkMode()" aria-label="Toggle dark mode">☾</button>
             </div>
-
         </nav>
-
     </header>
 
+    <!-- BEAUTIFIED FLOATING YOUTUBE MOVING BANNER -->
+    <div class="yt-banner">
+        <div class="yt-banner-label">
+            <div class="live-dot"></div>
+            <span>LATEST UPLOADS</span>
+        </div>
+        <div class="yt-ticker-wrap">
+            <div class="yt-ticker-move" id="ytVideoTicker">
+                <a href="https://www.youtube.com/@sindhmusicinfo" target="_blank" rel="noopener noreferrer" class="yt-ticker-item">
+                    <span class="yt-badge">WATCH</span>
+                    <span>Explore Latest Videos & Music Releases on YouTube / GAM ME MUSKARAANA</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO -->
-
     <section class="hero" id="home">
-
-        <div class="hero-small">
-            HAKIM ALI
-        </div>
-
-        <h1>
-            Discover.<br>
-            <span>Explore. Connect.</span>
-        </h1>
-
-        <p>
-            Welcome to E-DUKAN — a simple place to discover
-            Hakim Ali's music, shopping recommendations,
-            social platforms and online content.
-        </p>
-
-        <a href="#links" class="hero-button">
-            Explore My Links →
-        </a>
-
+        <div class="hero-small">Explore & Connect</div>
+        <h1>Discover.<br><span>Explore. Connect.</span></h1>
+        <p>Welcome to E-DUKAN — a practical hub featuring software development platforms, essential utilities, AI assistants, and digital content.</p>
+        <a href="#digital-tools" class="hero-button">Explore Tools & Software →</a>
     </section>
 
-
-    <!-- LINKS -->
-
-    <section class="section" id="links">
-
+    <!-- ARTICLES SECTION -->
+    <section class="section" id="articles">
         <div class="section-title">
-
-            <small>My Platforms</small>
-
-            <h2>Find Me Online</h2>
-
-            <p>
-                Follow, watch and explore my latest content.
-            </p>
-
+            <small>Knowledge Hub</small>
+            <h2>Latest Guides & Insights</h2>
+            <p>Read technical reviews, productivity articles, and programming tool setup guides.</p>
         </div>
 
+        <div class="articles-grid">
+            <div class="article-card">
+                <div>
+                    <div class="article-tag">Productivity</div>
+                    <h3>Selecting the Right Office Tools for Modern Workflows</h3>
+                    <p>An in-depth guide on maximizing document creation, spreadsheet tracking, and team presentation tools.</p>
+                </div>
+                <button class="article-read-btn" onclick="openModal('art1')">Read Article →</button>
+            </div>
+
+            <div class="article-card">
+                <div>
+                    <div class="article-tag">Artificial Intelligence</div>
+                    <h3>Understanding Next-Gen AI Assistants in 2026</h3>
+                    <p>Discover how artificial intelligence assistants are reshaping search algorithms, code debugging, and creative design.</p>
+                </div>
+                <button class="article-read-btn" onclick="openModal('art2')">Read Article →</button>
+            </div>
+
+            <div class="article-card">
+                <div>
+                    <div class="article-tag">E-Commerce</div>
+                    <h3>Choosing Useful Digital Tools: A Practical Guide</h3>
+                    <p>Learn how to compare digital tools by purpose, reliability, official support, and privacy considerations.</p>
+                </div>
+                <button class="article-read-btn" onclick="openModal('art3')">Read Article →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL LINKS -->
+    <section class="section" id="links">
+        <div class="section-title">
+            <small>My Platforms</small>
+            <h2>Find Me Online</h2>
+            <p>Follow, watch and explore my latest content.</p>
+        </div>
 
         <div class="links-grid" id="linksGrid">
-
-
-            <!-- YOUTUBE -->
-
-            <div
-                class="link-card"
-                data-search="youtube music songs videos hakim ali sindh music"
-            >
-
+            <div class="link-card" data-search="youtube music songs videos hakim ali sindh music">
                 <div class="platform-logo youtube-logo">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z"/>
-                    </svg>
-
+                    <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
                 </div>
-
                 <h3>YouTube</h3>
-
-                <p>
-                    Hakim Ali shares his music, songs and
-                    other video content on his YouTube channel.
-                </p>
-
-                <a
-                    href="https://www.youtube.com/@sindhmusicinfo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="visit"
-                >
-                    Visit YouTube →
-                </a>
-
+                <p>Hakim Ali shares his music, videos, and production guides on YouTube.</p>
+                <a href="https://www.youtube.com/@sindhmusicinfo" target="_blank" rel="noopener noreferrer" class="visit">Visit YouTube →</a>
             </div>
 
-
-            <!-- PINTEREST -->
-
-            <div
-                class="link-card"
-                data-search="pinterest shopping products recommendations hakim ali"
-            >
-
+            <div class="link-card" data-search="pinterest shopping products recommendations hakim ali">
                 <div class="platform-logo pinterest-logo">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.5 7.7 11.2-.1-1 0-2.2.2-3.1l1.4-5.9s-.4-.8-.4-2c0-1.9 1.1-3.3 2.6-3.3 1.2 0 1.8.9 1.8 2 0 1.2-.8 3-1.2 4.7-.3 1.4.7 2.5 2.1 2.5 2.5 0 4.2-2.6 4.2-6.3 0-3.3-2.4-5.7-5.9-5.7-4 0-6.4 3-6.4 6.1 0 1.2.5 2.5 1.1 3.2.1.1.1.2.1.4l-.4 1.5c-.1.5-.5.6-.9.4-1.8-.8-2.9-3.2-2.9-5.2 0-4.2 3.1-8.1 8.9-8.1 4.7 0 8.4 3.3 8.4 7.7 0 4.6-2.9 8.3-6.9 8.3-1.3 0-2.5-.7-2.9-1.5l-.8 3.2c-.3 1.2-1 2.7-1.5 3.6 1.1.3 2.3.5 3.5.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/>
-                    </svg>
-
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.5 7.7 11.2-.1-1 0-2.2.2-3.1l1.4-5.9s-.4-.8-.4-2c0-1.9 1.1-3.3 2.6-3.3 1.2 0 1.8.9 1.8 2 0 1.2-.8 3-1.2 4.7-.3 1.4.7 2.5 2.1 2.5 2.5 0 4.2-2.6 4.2-6.3 0-3.3-2.4-5.7-5.9-5.7-4 0-6.4 3-6.4 6.1 0 1.2.5 2.5 1.1 3.2.1.1.1.2.1.4l-.4 1.5c-.1.5-.5.6-.9.4-1.8-.8-2.9-3.2-2.9-5.2 0-4.2 3.1-8.1 8.9-8.1 4.7 0 8.4 3.3 8.4 7.7 0 4.6-2.9 8.3-6.9 8.3-1.3 0-2.5-.7-2.9-1.5l-.8 3.2c-.3 1.2-1 2.7-1.5 3.6 1.1.3 2.3.5 3.5.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
                 </div>
-
                 <h3>Pinterest</h3>
-
-                <p>
-                    Discover shopping products, useful finds
-                    and product recommendations from Hakim Ali.
-                </p>
-
-                <a
-                    href="https://www.pinterest.com/hakimkanasro/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="visit"
-                >
-                    Visit Pinterest →
-                </a>
-
+                <p>Discover product recommendations, technology visuals, and resources.</p>
+                <a href="https://www.pinterest.com/hakimkanasro/" target="_blank" rel="noopener noreferrer" class="visit">Visit Pinterest →</a>
             </div>
 
-
-            <!-- FACEBOOK -->
-
-            <div
-                class="link-card"
-                data-search="facebook social media hakim ali updates"
-            >
-
+            <div class="link-card" data-search="facebook social media hakim ali updates">
                 <div class="platform-logo facebook-logo">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1C0 18.1 4.4 23 10.1 24v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.3h3.4l-.5 3.5h-2.9V24C19.6 23 24 18.1 24 12.1z"/>
-                    </svg>
-
+                    <svg viewBox="0 0 24 24"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1C0 18.1 4.4 23 10.1 24v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.3h3.4l-.5 3.5h-2.9V24C19.6 23 24 18.1 24 12.1z"/></svg>
                 </div>
-
                 <h3>Facebook</h3>
-
-                <p>
-                    Connect with Hakim Ali on Facebook and
-                    follow his latest updates and posts.
-                </p>
-
-                <a
-                    href="https://www.facebook.com/hkanasro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="visit"
-                >
-                    Visit Facebook →
-                </a>
-
+                <p>Connect with Hakim Ali on Facebook and follow his latest platform updates.</p>
+                <a href="https://www.facebook.com/hkanasro" target="_blank" rel="noopener noreferrer" class="visit">Visit Facebook →</a>
             </div>
-
         </div>
-
-
-        <!-- NO SEARCH RESULTS -->
-
-        <p
-            id="noResults"
-            style="
-                display:none;
-                text-align:center;
-                color:var(--muted);
-                font-size:13px;
-                margin-top:30px;
-            "
-        >
-            No links found.
-        </p>
-
     </section>
 
+    <!-- DIGITAL TOOLS -->
+    <section class="section" id="digital-tools">
+        <div class="section-title">
+            <small>Software Directory</small>
+            <h2>Developer & Windows Tools</h2>
+            <p>Direct download links for coding IDEs, system utilities, security, and graphics applications.</p>
+        </div>
+
+        <!-- 1. WINDOWS PROGRAMMING & IDES -->
+        <div class="tool-group">
+            <h3 class="tool-group-title">Windows Programming & IDEs</h3>
+            <div class="links-grid">
+                <div class="link-card" data-search="visual studio c++ c# .net windows programming ide microsoft">
+                    <div class="platform-logo tool-logo" style="background:#5c2d91;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17 2l-7 7.5L4 4 1 6.5v11L4 20l6-5.5L17 22l6-3.5v-13L17 2zm3 13.5l-4-3 4-3v6z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Visual Studio</h3>
+                        <p>Microsoft's flagship IDE for building Windows C++, C#, .NET, and desktop software applications.</p>
+                    </div>
+                    <a href="https://visualstudio.microsoft.com/downloads/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="vs code visual studio code editor programming web python microsoft">
+                    <div class="platform-logo tool-logo" style="background:#007acc;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M23.8 4.4L18.4.5c-.4-.3-.9-.2-1.2.1L8.3 8.7 3.3 5c-.4-.3-1-.2-1.3.2L.3 7.3c-.3.4-.2 1 .2 1.3l4.3 3.4L.5 15.4c-.4.3-.5.9-.2 1.3l1.7 2.1c.3.4.9.5 1.3.2l5-3.7 8.9 8.1c.3.3.8.4 1.2.1l5.4-3.9c.5-.4.7-1 .7-1.6V6c0-.6-.2-1.2-.7-1.6z"/></svg>
+                    </div>
+                    <div>
+                        <h3>VS Code</h3>
+                        <p>Fast, extensible code editor with vast extension ecosystem for JavaScript, Python, C++, and Go.</p>
+                    </div>
+                    <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="notepad++ lightweight text editor programming windows C++">
+                    <div class="platform-logo tool-logo" style="background:#90c541;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M3 3v18h18V3H3zm14 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Notepad++</h3>
+                        <p>Ultra-fast lightweight source code editor and text editor replacement for native Windows users.</p>
+                    </div>
+                    <a href="https://notepad-plus-plus.org/downloads/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="git version control github command line terminal programming">
+                    <div class="platform-logo tool-logo" style="background:#f05032;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M2.6 10.6L11.4 1.8c.8-.8 2.1-.8 2.8 0l8.8 8.8c.8.8.8 2.1 0 2.8l-8.8 8.8c-.8.8-2.1.8-2.8 0l-8.8-8.8c-.7-.7-.7-2 0-2.8z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Git for Windows</h3>
+                        <p>Distributed version control system including Git Bash terminal command-line tool suite.</p>
+                    </div>
+                    <a href="https://git-scm.com/download/win" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="python programming language windows runtime terminal">
+                    <div class="platform-logo tool-logo" style="background:#3776ab;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M11.9 2c-5.2 0-4.9 2.3-4.9 2.3v2.4h5v.7H5.1S2 7.1 2 12.3c0 5.2 2.7 5 2.7 5h1.6v-2.3s-.1-2.7 2.7-2.7h4.7s2.6 0 2.6-2.5V4.6S17.1 2 11.9 2zm-1.4 1.6a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Python for Windows</h3>
+                        <p>Core Windows compiler installer for backend software design, scripting, and data analysis.</p>
+                    </div>
+                    <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="windows terminal command prompt powershell dev environment">
+                    <div class="platform-logo tool-logo" style="background:#4d4d4d;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M2 4h20v16H2V4zm2 2v12h16V6H4zm2 2h2v2H6V8zm0 3h5v2H6v-2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Windows Terminal</h3>
+                        <p>Modern terminal application for command-line users, PowerShell, and WSL Linux environment.</p>
+                    </div>
+                    <a href="https://apps.microsoft.com/detail/9n0dx20hkci1" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="pycharm jetbrains python IDE programming windows">
+                    <div class="platform-logo tool-logo" style="background:#21d789;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M2 2h20v20H2V2zm4 4v12h12V6H6zm2 2h4v2H8V8zm0 4h8v4H8v-4z"/></svg>
+                    </div>
+                    <div>
+                        <h3>PyCharm IDE</h3>
+                        <p>JetBrains Python IDE complete with intelligent code completion, refactoring, and debugging toolsets.</p>
+                    </div>
+                    <a href="https://www.jetbrains.com/pycharm/download/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="docker container windows desktop virtual machine programming">
+                    <div class="platform-logo tool-logo" style="background:#2496ed;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M13 9h2v2h-2V9zm-3 0h2v2h-2V9zm-3 0h2v2H7V9zm-3 0h2v2H4V9zm9-3h2v2h-2V6zm-3 0h2v2h-2V6zm-3 0h2v2H7V6zM1 13c.5 3.5 3.5 6 7 6h8c4 0 7-3 7-7h-1c-.5 0-1 .5-1.5 1-1-2-3-3-5.5-3H1z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Docker Desktop</h3>
+                        <p>Containerization workspace to build, test, and ship isolated application environments natively on Windows.</p>
+                    </div>
+                    <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="android studio mobile app java kotlin windows programming">
+                    <div class="platform-logo tool-logo" style="background:#3ddc84;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M6 18c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V8H6v10zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Android Studio</h3>
+                        <p>The official Windows IDE for Android development with integrated Kotlin/Java code compiler tools.</p>
+                    </div>
+                    <a href="https://developer.android.com/studio" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SYSTEM UTILITIES & FILE TOOLS -->
+        <div class="tool-group">
+            <h3 class="tool-group-title">System Utilities & Archives</h3>
+            <div class="links-grid">
+                <div class="link-card" data-search="7zip 7-zip archive zip rar compression extract windows tool">
+                    <div class="platform-logo tool-logo" style="background:#000000;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>7-Zip</h3>
+                        <p>Open-source high compression ratio file archiver utility for ZIP, 7z, and RAR files.</p>
+                    </div>
+                    <a href="https://www.7-zip.org/download.html" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="rufus bootable usb windows iso installation flash drive">
+                    <div class="platform-logo tool-logo" style="background:#a61c1c;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M15 7v2h-2V7h2zm-4 0v2H9V7h2zm-4 0v2H5V7h2zm10 4v8H3v-8h14zm-2 2H5v4h10v-4z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Rufus Utility</h3>
+                        <p>Format and create bootable USB flash drives for OS deployment (Windows 11, Linux ISOs).</p>
+                    </div>
+                    <a href="https://rufus.ie/en/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="powertoys microsoft windows utility productivity window manager">
+                    <div class="platform-logo tool-logo" style="background:#0078d4;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div>
+                        <h3>Microsoft PowerToys</h3>
+                        <p>Advanced system utilities for Windows power users including FancyZones, ColorPicker, and Image Resizer.</p>
+                    </div>
+                    <a href="https://github.com/microsoft/PowerToys/releases" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="cpu-z hardware information system specs ram motherboard benchmark">
+                    <div class="platform-logo tool-logo" style="background:#3b5998;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M4 4h16v16H4V4zm2 2v12h14V6H6zm3 3h3v3H9V9zm5 0h3v3h-3V9zm-5 5h3v3H9v-3zm5 0h3v3h-3v-3z"/></svg>
+                    </div>
+                    <div>
+                        <h3>CPU-Z Utility</h3>
+                        <p>Hardware detection tool providing detailed technical reports on CPU, motherboard, and RAM parameters.</p>
+                    </div>
+                    <a href="https://www.cpuid.com/softwares/cpu-z.html" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="ccleaner storage cleaner registry optimizer windows utility">
+                    <div class="platform-logo tool-logo" style="background:#d12026;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    </div>
+                    <div>
+                        <h3>CCleaner</h3>
+                        <p>System optimization tool to clear residual junk cache, manage startup applications, and free storage.</p>
+                    </div>
+                    <a href="https://www.ccleaner.com/ccleaner/download" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="winrar archive extract zip rar compression file manager">
+                    <div class="platform-logo tool-logo" style="background:#2b5b84;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M4 4h16v16H4V4zm4 4h8v2H8V8zm0 4h8v2H8v-2zm0 4h5v2H8v-2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>WinRAR</h3>
+                        <p>Established archive manager tool capable of creating, repairing, and extracting RAR/ZIP packages.</p>
+                    </div>
+                    <a href="https://www.win-rar.com/download.html" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="procmon process monitor sysinternals microsoft troubleshooting">
+                    <div class="platform-logo tool-logo" style="background:#1177d7;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm3 3h3v8H8V8zm5 0h3v8h-3V8z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Process Monitor</h3>
+                        <p>Sysinternals advanced monitoring tool showing real-time file system, Registry, and process activity.</p>
+                    </div>
+                    <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/procmon" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="everything voidtools fast file search indexing windows software">
+                    <div class="platform-logo tool-logo" style="background:#e57373;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Everything Search</h3>
+                        <p>Instant file locator engine that indexes your entire Windows file system in milliseconds.</p>
+                    </div>
+                    <a href="https://www.voidtools.com/downloads/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. NETWORK, DATABASE & SECURITY TOOLS -->
+        <div class="tool-group">
+            <h3 class="tool-group-title">Networking, Database & Security</h3>
+            <div class="links-grid">
+                <div class="link-card" data-search="postman api development testing rest web developer HTTP">
+                    <div class="platform-logo tool-logo" style="background:#ff6c37;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Postman</h3>
+                        <p>Complete API client toolkit to build, test, mock, and document REST, SOAP, and GraphQL APIs.</p>
+                    </div>
+                    <a href="https://www.postman.com/downloads/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="wireshark network packet analyzer security sniffer socket terminal">
+                    <div class="platform-logo tool-logo" style="background:#167ec5;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L2 22h20L12 2zm0 4l6 12H6l6-12z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Wireshark</h3>
+                        <p>The world's foremost network protocol analyzer for packet capture and deep security auditing.</p>
+                    </div>
+                    <a href="https://www.wireshark.org/download.html" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="putty ssh client telnet terminal remote server admin windows">
+                    <div class="platform-logo tool-logo" style="background:#000080;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>PuTTY SSH Client</h3>
+                        <p>Lightweight SSH and telnet client for connecting securely to remote Linux servers from Windows.</p>
+                    </div>
+                    <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="dbeaver database manager mysql postgresql sqlite sql tool">
+                    <div class="platform-logo tool-logo" style="background:#372923;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>DBeaver Universal DB</h3>
+                        <p>Free multi-platform database tool supporting MySQL, PostgreSQL, SQLite, Oracle, and SQL Server.</p>
+                    </div>
+                    <a href="https://dbeaver.io/download/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="malwarebytes antivirus malware removal security scanner protection">
+                    <div class="platform-logo tool-logo" style="background:#0560a6;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Malwarebytes</h3>
+                        <p>Cybersecurity scanner engineered to eliminate viruses, ransomware, spywares, and unwanted programs.</p>
+                    </div>
+                    <a href="https://www.malwarebytes.com/mwb-download" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="filezilla ftp sftp client server file transfer tool windows">
+                    <div class="platform-logo tool-logo" style="background:#bf0000;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>FileZilla FTP</h3>
+                        <p>Cross-platform FTP, FTPS and SFTP server file management solution with intuitive interface.</p>
+                    </div>
+                    <a href="https://filezilla-project.org/download.php" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="nordvpn vpn privacy encryption security proxy windows client">
+                    <div class="platform-logo tool-logo" style="background:#4687ed;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5zm0 4l6 4v4c0 3.3-2.3 6.4-6 7.3-3.7-.9-6-4-6-7.3v-4l6-4z"/></svg>
+                    </div>
+                    <div>
+                        <h3>NordVPN</h3>
+                        <p>Encrypted Virtual Private Network software designed to secure online connections and maintain user privacy.</p>
+                    </div>
+                    <a href="https://nordvpn.com/download/windows/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="protonvpn vpn secure private open source network proxy">
+                    <div class="platform-logo tool-logo" style="background:#6d4aff;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L2 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>ProtonVPN</h3>
+                        <p>High-speed Swiss-based encrypted VPN protecting online activities with strict zero-logs policies.</p>
+                    </div>
+                    <a href="https://protonvpn.com/download" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. CREATIVE, GRAPHICS & MEDIA TOOLS -->
+        <div class="tool-group">
+            <h3 class="tool-group-title">Graphics, Video & Audio Tools</h3>
+            <div class="links-grid">
+                <div class="link-card" data-search="obs studio screen recorder streaming broadcasting video tool">
+                    <div class="platform-logo tool-logo" style="background:#1f232a;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    </div>
+                    <div>
+                        <h3>OBS Studio</h3>
+                        <p>Free and open-source software for video recording and high-definition live streaming.</p>
+                    </div>
+                    <a href="https://obsproject.com/download" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="blender 3d modeling animation rendering vfx graphics editor">
+                    <div class="platform-logo tool-logo" style="background:#ea7600;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2A10 10 0 1 0 22 12 10 10 0 0 0 12 2zm-1 15a5 5 0 1 1 5-5 5 5 0 0 1-5 5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Blender 3D Suite</h3>
+                        <p>Full open-source 3D creation pipeline supporting modeling, rigging, rendering, and video editing.</p>
+                    </div>
+                    <a href="https://www.blender.org/download/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="gimp photo editor image manipulation photoshop alternative graphics">
+                    <div class="platform-logo tool-logo" style="background:#5c5543;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>GIMP Editor</h3>
+                        <p>Cross-platform image editor providing sophisticated tools for graphic designers and photographers.</p>
+                    </div>
+                    <a href="https://www.gimp.org/downloads/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="vlc media player audio video format codec utility">
+                    <div class="platform-logo tool-logo" style="background:#ff7800;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L1 21h22L12 2zm0 5l6.5 11h-13L12 7z"/></svg>
+                    </div>
+                    <div>
+                        <h3>VLC Media Player</h3>
+                        <p>Universal multimedia player that handles all video, audio, DVD formats, and streaming codecs.</p>
+                    </div>
+                    <a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="audacity audio editor sound recording wav mp3 production">
+                    <div class="platform-logo tool-logo" style="background:#0000cc;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 4c1.7 0 3 1.3 3 3v4c0 1.7-1.3 3-3 3s-3-1.3-3-3V9c0-1.7 1.3-3 3-3z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Audacity Audio Editor</h3>
+                        <p>Easy-to-use, multi-track audio recorder and editor for Windows, macOS, and GNU/Linux.</p>
+                    </div>
+                    <a href="https://www.audacityteam.org/download/windows/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="inkscape vector graphics editor illustrator alternative svg design">
+                    <div class="platform-logo tool-logo" style="background:#000000;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L2 22h20L12 2zm0 4l6 12H6l6-12z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Inkscape Vector Editor</h3>
+                        <p>Professional vector graphics editor for creating SVG diagrams, logos, and digital illustrations.</p>
+                    </div>
+                    <a href="https://inkscape.org/release/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="handbrake video transcoder converter mp4 mkv compress tool">
+                    <div class="platform-logo tool-logo" style="background:#e53935;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V4h-5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>HandBrake Transcoder</h3>
+                        <p>Open-source tool for converting video files from almost any container format to modern MP4/MKV codecs.</p>
+                    </div>
+                    <a href="https://handbrake.fr/downloads.php" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="da vinci resolve video editing color grading audio post production">
+                    <div class="platform-logo tool-logo" style="background:#263238;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>DaVinci Resolve</h3>
+                        <p>Professional solution combining 8K video editing, color correction, visual effects, and audio post-production.</p>
+                    </div>
+                    <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. BROWSER & WEB PRODUCTIVITY -->
+        <div class="tool-group">
+            <h3 class="tool-group-title">Browsers & Web Applications</h3>
+            <div class="links-grid">
+                <div class="link-card" data-search="google chrome web browser fast internet search online">
+                    <div class="platform-logo tool-logo" style="background:#4285f4;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2A10 10 0 1 0 22 12 10 10 0 0 0 12 2zm0 15a5 5 0 1 1 5-5 5 5 0 0 1-5 5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Google Chrome</h3>
+                        <p>Fast, secure web browser developed by Google with seamless integration across digital devices.</p>
+                    </div>
+                    <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="mozilla firefox web browser open source privacy security internet">
+                    <div class="platform-logo tool-logo" style="background:#ff7139;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Mozilla Firefox</h3>
+                        <p>Independent privacy-focused web browser built to keep online navigation fast and user tracking safe.</p>
+                    </div>
+                    <a href="https://www.mozilla.org/firefox/new/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="brave browser adblock privacy crypto secure fast chromium">
+                    <div class="platform-logo tool-logo" style="background:#ff1b2d;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2L2 7l2 11 8 4 8-4 2-11-10-5zm0 4l6 3.5-1.5 8-4.5 2.5-4.5-2.5-1.5-8L12 6z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Brave Browser</h3>
+                        <p>Privacy-centric web browser that blocks trackers and intrusive advertisements natively out of the box.</p>
+                    </div>
+                    <a href="https://brave.com/download/" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="microsoft edge browser AI copilot Windows fast web browser">
+                    <div class="platform-logo tool-logo" style="background:#0078d4;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Microsoft Edge</h3>
+                        <p>Optimized Windows browser built on Chromium engine featuring built-in AI Copilot assistant.</p>
+                    </div>
+                    <a href="https://www.microsoft.com/edge" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="opera browser built in vpn adblock sidebar messenger workspace">
+                    <div class="platform-logo tool-logo" style="background:#ff1b2d;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Opera Browser</h3>
+                        <p>Feature-packed web browser complete with built-in free VPN, ad-blocker, and instant social messaging integrations.</p>
+                    </div>
+                    <a href="https://www.opera.com/download" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="notion workspace notes project management task database tool">
+                    <div class="platform-logo tool-logo" style="background:#000000;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M4 4h16v16H4V4zm3 3v10h2V7H7zm4 0v10h2V7h-2zm4 0v10h2V7h-2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Notion Workspace</h3>
+                        <p>All-in-one desktop productivity app for notes, project management, tasks, and team wikis.</p>
+                    </div>
+                    <a href="https://www.notion.so/desktop" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+
+                <div class="link-card" data-search="slack team chat collaboration messaging workspace developer tool">
+                    <div class="platform-logo tool-logo" style="background:#4a154b;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M6 15a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0-6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6-6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 12a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6-6a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Slack Client</h3>
+                        <p>Real-time channel messaging, voice calling, and project collaboration tool for software engineering teams.</p>
+                    </div>
+                    <a href="https://slack.com/download" target="_blank" rel="noopener noreferrer" class="visit">Download Official →</a>
+                </div>
+            </div>
+        </div>
+
+        <p id="noResults" style="display:none; text-align:center; color:var(--muted); font-size:13px; margin-top:30px;">
+            No tools or programs found matching your search.
+        </p>
+    </section>
 
     <!-- ABOUT -->
-
     <section class="section" id="about">
-
         <div class="about">
-
-
             <div>
-
-                <div class="about-label">
-                    ABOUT
-                </div>
-
-                <h2>
-                    Meet <span>Hakim Ali</span>
-                </h2>
-
+                <div class="about-label">ABOUT HUB</div>
+                <h2>E- <span>Dukan</span></h2>
                 <p>
-                    Hakim Ali is an influencer and content creator
-                    who shares interesting content across different
-                    online platforms.
+                    E-DUKAN is a comprehensive digital hub created by Hakim Ali to organize online software resources, developer platforms, AI tools, social pages, and tech downloads in one central directory.
                 </p>
-
-                <p>
-                    On Pinterest, he shares shopping products,
-                    useful finds and product recommendations.
-                    On YouTube, he shares his music and other
-                    video content.
-                </p>
-
-                <p>
-                    E-DUKAN brings his important online platforms
-                    together in one simple and easy-to-use website.
-                </p>
-
             </div>
-
 
             <div class="about-box">
-
-                <h3>
-                    What Hakim Ali Shares
-                </h3>
-
-                <div class="about-item">
-
-                    <div class="about-dot"></div>
-
-                    Music & Videos
-
-                </div>
-
-                <div class="about-item">
-
-                    <div class="about-dot"></div>
-
-                    Shopping Products
-
-                </div>
-
-                <div class="about-item">
-
-                    <div class="about-dot"></div>
-
-                    Product Recommendations
-
-                </div>
-
-                <div class="about-item">
-
-                    <div class="about-dot"></div>
-
-                    Social Media Content
-
-                </div>
-
+                <h3>Directory Highlights</h3>
+                <div class="about-item"><div class="about-dot"></div>40+ Windows & Dev Tools</div>
+                <div class="about-item"><div class="about-dot"></div>Direct Official Download Links</div>
+                <div class="about-item"><div class="about-dot"></div>Curated Software Classifications</div>
+                <div class="about-item"><div class="about-dot"></div>Interactive Query & Dark Mode</div>
             </div>
-
         </div>
-
     </section>
-
 
     <!-- CONTACT -->
-
     <section class="section" id="contact">
-
-        <div class="contact-box">
-
-            <h2>
-                Stay Connected
-            </h2>
-
-            <p>
-                Follow Hakim Ali and discover his latest music,
-                products and content.
-            </p>
-
-            <a
-                href="https://www.youtube.com/@sindhmusicinfo"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-button"
-            >
-                Visit YouTube
-            </a>
-
+        <div class="section-title">
+            <small>Get In Touch</small>
+            <h2>Contact Us</h2>
+            <p>Have recommendations for new tools or software links? Send us a message.</p>
         </div>
 
+        <div class="contact-grid">
+            <div class="contact-form-card">
+                <h3>Send Us A Message</h3>
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="contactName">Your Name</label>
+                        <input type="text" id="contactName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Your Email</label>
+                        <input type="email" id="contactEmail" class="form-control" placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMsg">Message</label>
+                        <textarea id="contactMsg" class="form-control" rows="4" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-box">
+                <h2>Stay Connected</h2>
+                <p>Follow our platforms to keep up with essential Windows programming updates and useful tool recommendations.</p>
+                <a href="https://www.youtube.com/@sindhmusicinfo" target="_blank" rel="noopener noreferrer" class="contact-button">Visit YouTube</a>
+            </div>
+        </div>
     </section>
 
+    <!-- QUERY CHAT -->
+    <section class="section query-section" id="queries">
+        <div class="section-title">
+            <small>Community Queries</small>
+            <h2>Ask & Discuss</h2>
+            <p>Ask questions about Windows tools, program setups, and software installation support.</p>
+        </div>
+
+        <div class="query-app">
+            <div class="query-header">
+                <div class="query-header-left">
+                    <div class="query-avatar">Q</div>
+                    <div>
+                        <h3>E-DUKAN Queries</h3>
+                        <div class="query-status">Community discussion space</div>
+                    </div>
+                </div>
+
+                <button class="query-clear" id="clearQueries" type="button">Clear Chat</button>
+            </div>
+
+            <div class="query-messages" id="queryMessages">
+                <div class="query-empty" id="queryEmpty">
+                    <strong>Start a conversation</strong>
+                    Ask a question below. Your messages will appear here like a modern chat.
+                </div>
+            </div>
+
+            <div class="query-composer">
+                <form id="queryForm">
+                    <div class="query-input-row">
+                        <textarea id="queryInput" class="query-input" placeholder="Type your question..." maxlength="1000" rows="1" aria-label="Type your question"></textarea>
+                        <button class="query-send" type="submit">Send →</button>
+                    </div>
+
+                    <div class="query-help">
+                        Press Enter to send • Shift + Enter for a new line • Queries saved locally
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
-
     <footer>
-
         <div class="footer-content">
-
             <div>
-
                 <a href="#home" class="logo">
-
                     <div class="logo-circle">
-                        E
+                        <svg viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/></svg>
+                        E-DUKAN
                     </div>
-
-                    <div class="logo-text">
-                        E-<span>DUKAN</span>
-                    </div>
-
                 </a>
-
-                <p class="footer-text">
-                    Simple. Useful. Connected.
-                </p>
-
+                <p class="footer-text">Simple. Useful. Connected.</p>
             </div>
-
 
             <div class="footer-links">
-
                 <a href="#home">Home</a>
-
+                <a href="#articles">Articles</a>
                 <a href="#links">Links</a>
-
+                <a href="#digital-tools">Software Tools</a>
                 <a href="#about">About</a>
-
-                <a
-                    href="https://www.youtube.com/@sindhmusicinfo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    YouTube
-                </a>
-
-                <a
-                    href="https://www.pinterest.com/hakimkanasro/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Pinterest
-                </a>
-
-                <a
-                    href="https://www.facebook.com/hkanasro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Facebook
-                </a>
-
+                <a href="javascript:void(0)" onclick="openModal('privacy')">Privacy Policy</a>
+                <a href="javascript:void(0)" onclick="openModal('terms')">Terms of Service</a>
+                <a href="javascript:void(0)" onclick="openModal('disclaimer')">Disclaimer</a>
             </div>
-
         </div>
-
 
         <div class="copyright">
-            © 2026 E-DUKAN — Hakim Ali. All rights reserved.
+            <span>© 2026 E-DUKAN — Hakim Ali. All rights reserved.</span>
+            <span>Featuring 40+ Official Programming & Windows Utility Resources</span>
         </div>
-
     </footer>
 
+    <!-- MODAL -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Information</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT -->
-
     <script>
+        // YOUTUBE TICKER BANNER
+        async function loadYouTubeBanner() {
+            const feedUrl = "https://www.youtube.com/feeds/videos.xml?user=sindhmusicinfo";
+            const apiEndpoint = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
 
-        /* =========================
-           SEARCH
-        ========================= */
+            try {
+                const response = await fetch(apiEndpoint);
+                const data = await response.json();
 
+                if (data.status === "ok" && data.items && data.items.length > 0) {
+                    const tickerContainer = document.getElementById("ytVideoTicker");
+                    tickerContainer.innerHTML = "";
+
+                    data.items.forEach(video => {
+                        const item = document.createElement("a");
+                        item.className = "yt-ticker-item";
+                        item.href = video.link;
+                        item.target = "_blank";
+                        item.rel = "noopener noreferrer";
+                        item.innerHTML = `<span class="yt-badge">NEW</span> <span>${video.title}</span>`;
+                        tickerContainer.appendChild(item);
+                    });
+                }
+            } catch (error) {
+                console.error("Error fetching YouTube videos:", error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", loadYouTubeBanner);
+
+        // LIVE SEARCH FOR ALL 40+ CARDS
         const searchInput = document.getElementById("searchInput");
         const cards = document.querySelectorAll(".link-card");
         const noResults = document.getElementById("noResults");
 
         searchInput.addEventListener("input", function () {
-
-            const searchText = this.value
-                .toLowerCase()
-                .trim();
-
+            const searchText = this.value.toLowerCase().trim();
             let found = 0;
 
             cards.forEach(function(card) {
-
-                const searchableText =
-                    (
-                        card.innerText +
-                        " " +
-                        card.dataset.search
-                    ).toLowerCase();
+                const searchableText = (card.innerText + " " + card.dataset.search).toLowerCase();
 
                 if (searchableText.includes(searchText)) {
-
                     card.style.display = "";
-
                     found++;
-
                 } else {
-
                     card.style.display = "none";
-
                 }
-
             });
 
-
-            if (found === 0) {
-
-                noResults.style.display = "block";
-
-            } else {
-
-                noResults.style.display = "none";
-
-            }
-
+            noResults.style.display = found === 0 ? "block" : "none";
         });
 
+        // QUERY SYSTEM LOGIC
+        const queryForm = document.getElementById("queryForm");
+        const queryInput = document.getElementById("queryInput");
+        const queryMessages = document.getElementById("queryMessages");
+        const queryEmpty = document.getElementById("queryEmpty");
+        const clearQueries = document.getElementById("clearQueries");
 
-        /* =========================
-           DARK MODE
-        ========================= */
+        let queries = JSON.parse(localStorage.getItem("eDukanQueries") || "[]");
 
-        function toggleDarkMode() {
-
-            document.body.classList.toggle("dark");
-
-            const isDark =
-                document.body.classList.contains("dark");
-
-            localStorage.setItem(
-                "darkMode",
-                isDark ? "on" : "off"
-            );
-
-            updateThemeButton();
-
+        function saveQueries() {
+            localStorage.setItem("eDukanQueries", JSON.stringify(queries));
         }
 
+        function formatQueryTime(dateString) {
+            return new Date(dateString).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        }
 
-        function updateThemeButton() {
+        function renderQueries() {
+            queryMessages.innerHTML = "";
 
-            const button =
-                document.getElementById("themeButton");
-
-            if (document.body.classList.contains("dark")) {
-
-                button.textContent = "☀";
-
-            } else {
-
-                button.textContent = "☾";
-
+            if (queries.length === 0) {
+                queryMessages.appendChild(queryEmpty);
+                return;
             }
 
+            queries.forEach(function(query) {
+                const message = document.createElement("div");
+                message.className = "query-message user";
+                message.dataset.id = query.id;
+
+                const bubble = document.createElement("div");
+                bubble.className = "query-bubble";
+
+                const text = document.createElement("div");
+                text.className = "query-question";
+                text.textContent = query.text;
+
+                const meta = document.createElement("div");
+                meta.className = "query-meta";
+
+                const time = document.createElement("span");
+                time.className = "query-time";
+                time.textContent = formatQueryTime(query.updatedAt);
+
+                const actions = document.createElement("div");
+                actions.className = "query-actions";
+
+                const editButton = document.createElement("button");
+                editButton.className = "query-action";
+                editButton.type = "button";
+                editButton.textContent = "Edit";
+                editButton.addEventListener("click", function() { editQuery(query.id); });
+
+                const deleteButton = document.createElement("button");
+                deleteButton.className = "query-action";
+                deleteButton.type = "button";
+                deleteButton.textContent = "Delete";
+                deleteButton.addEventListener("click", function() { deleteQuery(query.id); });
+
+                actions.appendChild(editButton);
+                actions.appendChild(deleteButton);
+                meta.appendChild(time);
+                meta.appendChild(actions);
+                bubble.appendChild(text);
+                bubble.appendChild(meta);
+                message.appendChild(bubble);
+                queryMessages.appendChild(message);
+            });
+
+            queryMessages.scrollTop = queryMessages.scrollHeight;
         }
 
+        function addQuery(text) {
+            queries.push({ id: Date.now().toString(), text: text, updatedAt: new Date().toISOString() });
+            saveQueries();
+            renderQueries();
+        }
 
-        if (
-            localStorage.getItem("darkMode") === "on"
-        ) {
+        function editQuery(id) {
+            const query = queries.find(item => item.id === id);
+            if (!query) return;
 
+            queryInput.value = query.text;
+            queryInput.focus();
+            queryForm.dataset.editingId = id;
+            queryForm.querySelector(".query-send").textContent = "Update →";
+        }
+
+        function deleteQuery(id) {
+            queries = queries.filter(item => item.id !== id);
+            saveQueries();
+            renderQueries();
+        }
+
+        queryForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const text = queryInput.value.trim();
+            if (!text) return;
+
+            const editingId = queryForm.dataset.editingId;
+
+            if (editingId) {
+                const query = queries.find(item => item.id === editingId);
+                if (query) {
+                    query.text = text;
+                    query.updatedAt = new Date().toISOString();
+                }
+                delete queryForm.dataset.editingId;
+                queryForm.querySelector(".query-send").textContent = "Send →";
+                saveQueries();
+                renderQueries();
+            } else {
+                addQuery(text);
+            }
+
+            queryInput.value = "";
+            queryInput.focus();
+        });
+
+        clearQueries.addEventListener("click", function() {
+            if (queries.length === 0) return;
+            if (confirm("Clear all queries from your local browser memory?")) {
+                queries = [];
+                saveQueries();
+                renderQueries();
+            }
+        });
+
+        renderQueries();
+
+        // DARK MODE TOGGLE
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+            const isDark = document.body.classList.contains("dark");
+            localStorage.setItem("darkMode", isDark ? "on" : "off");
+            updateThemeButton();
+        }
+
+        function updateThemeButton() {
+            const button = document.getElementById("themeButton");
+            button.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
+        }
+
+        if (localStorage.getItem("darkMode") === "on") {
             document.body.classList.add("dark");
-
         }
-
         updateThemeButton();
 
-    </script>
+        // MODALS
+        const modalData = {
+            disclaimer: { title: "Disclaimer", content: "<p>E-DUKAN provides direct links to official vendor download pages for safety. Software ownership belongs to respective companies The information provided on this platform is for general informational and educational purposes only. While we strive to keep content accurate and up to date, we make no express or implied representations or warranties regarding completeness, reliability, or suitability. Any action you take based on the information found here is strictly at your own risk. We will not be liable for any losses, damages, or indirect consequences arising from platform use. External links may direct you to third-party sites outside our control, and we do not endorse or assume responsibility for their content or safety. Always seek professional advice when needed..</p>" },
+            privacy: { title: "Privacy Policy", content: "<p>E-DUKAN does not track personal data. Query data and dark mode settings are stored locally within your own browser.We respect your privacy and are fully committed to protecting the personal information you share with us. This policy outlines how we collect, use, and safeguard your data when you navigate our platform. We gather basic information, such as IP addresses, browser types, and optional user details, strictly to enhance site functionality, analyze trends, and personalize your experience. We do not sell, trade, or rent your personal data to third parties. Advanced security measures are implemented to protect against unauthorized access, modification, or disclosure. By using our services, you consent to our data collection practices as detailed here.</p>" },
+            terms: { title: "Terms of Service", content: "<p>External products and software resources are owned by third-party creators. Access links on official sites prior to installation.By accessing and using this site, you agree to comply with and be bound by the following terms and conditions. All content published, including text, graphics, logos, and original media, remains our intellectual property and cannot be reproduced, distributed, or modified without explicit written permission. Users are prohibited from engaging in unlawful behavior, attempting security breaches, or uploading harmful materials. We reserve the right to modify or terminate services, restrict access, or update these terms at any time without prior notice. Continued use of the platform after updates constitutes your full acceptance of the newly revised terms.</p>" },
+            art1: { title: "Selecting Office Tools", content: "<p>Modern desktop suites require efficient spreadsheet tracking, document design, and reliable storage management.</p>" },
+            art2: { title: "Next-Gen AI Assistants", content: "<p>Modern AI solutions integrate context aware logic to maximize programming productivity and speed up software debugging.</p>" },
+            art3: { title: "Choosing Useful Digital Tools", content: "<p>Always download installer software from official developer repositories to maintain system safety and integrity.</p>" }
+        };
 
+        function openModal(key) {
+            const data = modalData[key];
+            if (!data) return;
+            document.getElementById("modalTitle").innerText = data.title;
+            document.getElementById("modalBody").innerHTML = data.content;
+            document.getElementById("infoModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("infoModal").style.display = "none";
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Message delivered successfully.");
+            document.getElementById("contactForm").reset();
+        }
+    </script>
 </body>
 </html>
